@@ -1,5 +1,14 @@
 # 🧱 Deep Agents from Scratch
 
+## Lyfing Fork说明 LLM使用Deepseek
+我是中国大陆的一个开发者，最近在langchain官网学习他们的官方教程，其中一个项目是 https://academy.langchain.com/courses/deep-agents-with-langgraph. 
+
+我跟着这个教程，通过在jupyter notebook中按部就班地执行示例代码的时候，发现他们用的LLM模型都是国外的，但其实在中国更便宜、性能也不差、而且方便访问的LLM(无需科学上网)其实Deepseek就很不错。
+
+**所以针对该项目`notebooks/`目录下的`**.ipynb`文件中的涉及到具体LLM模型配置的地方，我都改成了Deepseek，其他地方基本没动，这样可以和官方教程保持最大一致性**。具体Deepseek配置仍然参考官方教程给出的根目录下所使用的 `example.env` 即可，在该文件中我添加了两个Deepseek相关的apiKey配置。
+
+------
+
 <img width="720" height="289" alt="Screenshot 2025-08-12 at 2 13 54 PM" src="https://github.com/user-attachments/assets/90e5a7a3-7e88-4cbe-98f6-5b2581c94036" />
 
 [Deep Research](https://academy.langchain.com/courses/deep-research-with-langgraph) broke out as one of the first major agent use-cases along with coding. Now, we've seeing an emergence of general purpose agents that can be used for a wide range of tasks. For example, [Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus) has gained significant attention and popularity for long-horizon tasks; the average Manus task uses ~50 tool calls!. As a second example, Claude Code is being used generally for tasks beyond coding. Careful review of the [context engineering patterns](https://docs.google.com/presentation/d/16aaXLu40GugY-kOpqDU4e-S0hD1FmHcNyF0rRRnb1OU/edit?slide=id.p#slide=id.p) across these popular "deep" agents shows some common approaches:
