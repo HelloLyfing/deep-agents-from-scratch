@@ -1,11 +1,13 @@
 # 🧱 Deep Agents from Scratch
 
 ## Lyfing Fork说明 LLM使用Deepseek
-我是中国大陆的一个开发者，最近在langchain官网学习他们的官方教程，其中一个项目是 https://academy.langchain.com/courses/deep-agents-with-langgraph. 
+我是中国大陆的一名开发者，最近在langchain官网学习他们的官方教程，其中一个项目是 https://academy.langchain.com/courses/deep-agents-with-langgraph. 
 
-我跟着这个教程，通过在jupyter notebook中按部就班地执行示例代码的时候，发现他们用的LLM模型都是国外的，但其实在中国更便宜、性能也不差、而且方便访问的LLM(无需科学上网)其实Deepseek就很不错。
+我原计划跟着这个教程，通过在jupyter notebook中按部就班地执行示例代码来学习。结果发现他们Demo用的LLM模型都是国外的，但目前国外模型对国内其实不太友好，而且，其实在中国更便宜、性能也不差、更便于访问和使用的LLM(无需科学上网)其实Deepseek就很不错（我充值了20块钱感觉够用好久）。
 
 **所以针对该项目`notebooks/`目录下的`**.ipynb`文件中的涉及到具体LLM模型配置的地方，我都改成了Deepseek，其他地方基本没动，这样可以和官方教程保持最大一致性**。具体Deepseek配置仍然参考官方教程给出的根目录下所使用的 `example.env` 即可，在该文件中我添加了两个Deepseek相关的apiKey配置。
+
+注意：```langchain-deepseek==1.0.1```的版本，是我花了点时间验证的比较适配整个项目的。如果要升级这个包可能引来其他langchain核心包的联动升级，以及后续程序不可执行的风险，注意规避。
 
 ------
 
