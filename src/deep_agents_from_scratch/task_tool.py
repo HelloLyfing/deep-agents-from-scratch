@@ -7,6 +7,7 @@ context windows containing only their specific task description.
 
 from typing import Annotated, NotRequired
 from typing_extensions import TypedDict
+from utils import format_messages
 
 from langchain_core.messages import ToolMessage
 from langchain_core.tools import BaseTool, InjectedToolCallId, tool
@@ -96,16 +97,19 @@ def _create_task_tool(tools, subagents: list[SubAgent], model, state_schema):
         # Execute the sub-agent in isolation
         result = sub_agent.invoke(state)
 
+        # Lyfing标注，打印子agent的处理结果
+        toolMsgs = [
+            # Sub-agent result becomes a ToolMessage in parent context
+            ToolMessage( result["messages"][-1].content, tool_call_id=tool_call_id )
+        ]
+        print(f"开始打印toolMsgs(子agent返回内容)")
+        format_messages(toolMsgs)
+
         # Return results to parent agent via Command state update
         return Command(
             update={
                 "files": result.get("files", {}),  # Merge any file changes
-                "messages": [
-                    # Sub-agent result becomes a ToolMessage in parent context
-                    ToolMessage(
-                        result["messages"][-1].content, tool_call_id=tool_call_id
-                    )
-                ],
+                "messages": toolMsgs,
             }
         )
 
